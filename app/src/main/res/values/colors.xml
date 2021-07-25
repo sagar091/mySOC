@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">#333333</color>
+    <color name="color_primary_dark">#333333</color>
+    <color name="window_background">#FFFFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="off_white">#FAFAFA</color>
+    <color name="divider">#E1E1E1</color>
+    <color name="text_color">#000000</color>
+    <color name="primary_text_color">#121212</color>
+    <color name="hint_text_color">#7F7F7F</color>
+    <color name="edit_text_color">#343434</color>
+    <color name="toolbar_background">#333333</color>
+    <color name="button_background">#AB6452</color>
+    <color name="blue_tag">#979bc6</color>
+
+    <color name="indicator_default">#C0C0C0</color>
+    <color name="indicator_select">#5B3730</color>
+
+    <color name="color_home">#FFF</color>
+    <color name="color_inbox">#FFF</color>
+    <color name="color_doorstep">#FFF</color>
+    <color name="color_menu">#FFF</color>
+
+    <color name="card_color_1">#333333</color>
+    <color name="card_color_2">#5B3730</color>
+    <color name="card_color_3">#979BC6</color>
+    <color name="card_color_4">#827AFF</color>
+    <color name="card_color_5">#6F8F9D</color>
+    <color name="card_color_6">#5FAD56</color>
+    <color name="card_color_7">#F2CD60</color>
+    <color name="card_color_8">#395C6B</color>
+    <color name="card_color_9">#084887</color>
+</resources>

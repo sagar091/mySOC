@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ViewProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtViewProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:drawableEnd="@drawable/ic_right"
+            android:fontFamily="@font/medium_500"
+            android:padding="@dimen/dimen_20dp"
+            android:text="My Profile"
+            android:textSize="@dimen/sp18" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:background="@color/divider" />
+
+        <TextView
+            android:id="@+id/txtCommitteeSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:drawableEnd="@drawable/ic_right"
+            android:fontFamily="@font/medium_500"
+            android:padding="@dimen/dimen_20dp"
+            android:text="Committee Section"
+            android:textSize="@dimen/sp18" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:background="@color/divider" />
+
+        <TextView
+            android:id="@+id/txtComplaints"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:drawableEnd="@drawable/ic_right"
+            android:fontFamily="@font/medium_500"
+            android:padding="@dimen/dimen_20dp"
+            android:text="Complaints"
+            android:textSize="@dimen/sp18" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:background="@color/divider" />
+
+        <TextView
+            android:id="@+id/txtSuggestions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:drawableEnd="@drawable/ic_right"
+            android:fontFamily="@font/medium_500"
+            android:padding="@dimen/dimen_20dp"
+            android:text="Suggestions"
+            android:textSize="@dimen/sp18" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:background="@color/divider" />
+
+        <TextView
+            android:id="@+id/txtLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:drawableEnd="@drawable/ic_right"
+            android:fontFamily="@font/medium_500"
+            android:padding="@dimen/dimen_20dp"
+            android:text="Logout"
+            android:textSize="@dimen/sp18" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:background="@color/divider" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

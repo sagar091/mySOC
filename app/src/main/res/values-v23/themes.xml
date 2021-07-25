@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="Theme.MySOC" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryVariant">@color/color_primary_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:lineSpacingExtra">@dimen/line_spacing</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:fontFamily">@font/regular_400</item>
+        <item name="editTextStyle">@style/EditTextDefault</item>
+        <item name="android:textViewStyle">@style/TextViewDefault</item>
+    </style>
+</resources>

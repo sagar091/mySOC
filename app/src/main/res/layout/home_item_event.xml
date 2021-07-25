@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:paddingTop="@dimen/dimen_8dp"
+    android:paddingBottom="@dimen/dimen_8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/drawable_rounded_primary"
+            android:baselineAligned="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/dimen_16dp"
+            android:paddingTop="@dimen/dimen_8dp"
+            android:paddingEnd="@dimen/dimen_16dp"
+            android:paddingBottom="@dimen/dimen_8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/medium_500"
+                android:gravity="center"
+                android:text="10"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp20" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_2dp"
+                android:fontFamily="@font/medium_500"
+                android:gravity="center"
+                android:textSize="@dimen/sp12"
+                android:text="SEPT"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/medium_500"
+                android:text="Ganesh Chaturthi"
+                android:textSize="@dimen/sp14" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

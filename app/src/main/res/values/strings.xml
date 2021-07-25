@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">MySOC</string>
+    <string name="dummy">AppIntroAnimation is a set of code snippets to make cool intro screen for your app with special Image Translation and Transformation animation effects.</string>
+    <string name="dummy_long">As you know, we have recently expanded our facility. We have added a pool, increased the size of our workout room, and begun offering free day care. To help offset the cost of construction, we must increase our family membership fees by $25, effective immediately. If you renewed your membership last month you will not be assessed the additional $25 fee until your next renewal date. Doe Spa now offers swimming, weight lifting, ice skating, and aerobic conditioning for the entire family. And even with the higher price, we offer one the lowest prices in the state. We appreciate your support and hope that you will continue to choose Doe Spa as the place for your family\'s fitness.</string>
+
+    <string name="slide_1_title">EMAIL</string>
+    <string name="slide_2_title">CALENDAR</string>
+    <string name="slide_3_title">SHOPPING</string>
+    <string name="slide_4_title">SOCIAL NETWORK</string>
+    <string name="password">e.g. ••••••••</string>
+    <string name="registration_label"><u>Registration</u></string>
+    <string name="login_label"><u>Login</u></string>
+    <string name="forget_password"><u>Forgot Password?</u></string>
+    <string name="sign_up_here">New member? <u>Sign up here</u></string>
+    <string name="login_here">Already have an account? <u>Login here</u></string>
+    <string name="view_profile"><u>View profile</u></string>
+    <string name="view_more"><u>View more</u></string>
+    <string name="view_all"><u>View all</u></string>
+    <string name="menu_home">Home</string>
+    <string name="forgot_password_label">Forgot Password</string>
+    <string name="email_id_label">Email-id</string>
+    <string name="reset_password_label">Reset password</string>
+    <string name="reset_password_desc">We will send you an email with a link to reset your password</string>
+    <string-array name="property_types">
+        <item>Owned</item>
+        <item>Rental</item>
+    </string-array>
+</resources>

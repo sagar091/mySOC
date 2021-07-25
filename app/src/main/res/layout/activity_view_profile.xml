@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ViewProfileActivity">
+
+    <include
+        android:id="@+id/toolBarLayout"
+        layout="@layout/layout_toolbar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/toolBarLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_20dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_72dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/temp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_16dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/medium_500"
+                    android:text="Sagar Tahelyani"
+                    android:textSize="@dimen/sp18" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_4dp"
+                    android:text="E-126" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_4dp"
+                    android:text="Software Engineer" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_4dp"
+                    android:text="Volunteer" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:background="@color/divider" />
+
+        <TextView
+            android:id="@+id/txtViewProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:drawableEnd="@drawable/ic_right"
+            android:fontFamily="@font/medium_500"
+            android:padding="@dimen/dimen_20dp"
+            android:text="Edit Profile"
+            android:textSize="@dimen/sp18" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:background="@color/divider" />
+
+        <TextView
+            android:id="@+id/txtSmartCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:drawableEnd="@drawable/ic_right"
+            android:fontFamily="@font/medium_500"
+            android:padding="@dimen/dimen_20dp"
+            android:text="Smart card"
+            android:textSize="@dimen/sp18" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:background="@color/divider" />
+
+        <TextView
+            android:id="@+id/txtFamilyMembers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:drawableEnd="@drawable/ic_right"
+            android:fontFamily="@font/medium_500"
+            android:padding="@dimen/dimen_20dp"
+            android:text="Family members"
+            android:textSize="@dimen/sp18" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:background="@color/divider" />
+
+        <TextView
+            android:id="@+id/txtChangePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:drawableEnd="@drawable/ic_right"
+            android:fontFamily="@font/medium_500"
+            android:padding="@dimen/dimen_20dp"
+            android:text="Change password"
+            android:textSize="@dimen/sp18" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:background="@color/divider" />
+
+        <TextView
+            android:id="@+id/txtLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:drawableEnd="@drawable/ic_right"
+            android:fontFamily="@font/medium_500"
+            android:padding="@dimen/dimen_20dp"
+            android:text="Logout"
+            android:textSize="@dimen/sp18" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginBottom="@dimen/dimen_8dp"
+            android:background="@color/divider" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
