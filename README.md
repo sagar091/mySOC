@@ -1,0 +1,2 @@
+# mySOC
+Society Management System
