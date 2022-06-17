@@ -1,14 +1,16 @@
 package com.droidyme.mysoc.utility
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.text.Editable
-import android.text.SpannableStringBuilder
-import android.text.TextWatcher
+import android.os.Handler
+import android.text.*
+import android.text.style.StyleSpan
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
@@ -17,12 +19,16 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatAutoCompleteTextView
+import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
+import androidx.core.view.children
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
+import androidx.viewpager2.widget.ViewPager2
 import com.droidyme.mysoc.R
 import com.droidyme.mysoc.custom.DividerItemDecorator
+import com.gun0912.tedpermission.PermissionListener
 import java.util.regex.Pattern
 
 
@@ -184,6 +190,19 @@ fun SpannableStringBuilder.spansAppend(
     return this
 }
 
+// SpanStyle
+fun TextView.setTextWithSpan(
+    text: String,
+    spanText: String,
+    style: StyleSpan?
+) {
+    val sb = SpannableStringBuilder(text)
+    val start = text.indexOf(spanText)
+    val end = start + spanText.length
+    sb.setSpan(style, start, end, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
+    this.text = sb
+}
+
 fun AppCompatAutoCompleteTextView.afterTextChanged(callback: (String) -> Unit) {
     this.addTextChangedListener(object : TextWatcher {
         override fun beforeTextChanged(
@@ -262,4 +281,74 @@ fun RecyclerView.applyDivider(isLastDivider: Boolean) {
             DividerItemDecorator(horizontalDivider!!)
         addItemDecoration(dividerItemDecoration)
     }
+}
+
+fun Toolbar.setToolbarTextViewsMarquee() {
+    for (child in this.children) {
+        if (child is TextView) {
+            setMarquee(child)
+        }
+    }
+}
+
+fun setMarquee(textView: TextView) {
+    textView.ellipsize = TextUtils.TruncateAt.MARQUEE
+    textView.isSelected = true
+    textView.marqueeRepeatLimit = -1
+}
+
+
+fun ViewPager2.autoScroll(interval: Long) {
+
+    val handler = Handler()
+    var scrollPosition = 0
+
+    val runnable = object : Runnable {
+
+        override fun run() {
+
+            /**
+             * Calculate "scroll position" with
+             * adapter pages count and current
+             * value of scrollPosition.
+             */
+            val count = adapter?.itemCount ?: 0
+            setCurrentItem(scrollPosition++ % count, true)
+
+            handler.postDelayed(this, interval)
+        }
+    }
+
+    registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+
+        override fun onPageSelected(position: Int) {
+            super.onPageSelected(position)
+            scrollPosition = position + 1
+        }
+
+    })
+
+    handler.post(runnable)
+}
+
+fun Context.call(number: String) {
+    Utility.askPermissions(this, arrayOf(Manifest.permission.CALL_PHONE),
+        object : PermissionListener {
+            override fun onPermissionGranted() {
+                val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:$number"))
+                startActivity(intent)
+            }
+
+            override fun onPermissionDenied(deniedPermissions: MutableList<String>?) {
+
+            }
+        })
+
+}
+
+fun Context.whatsApp(number: String) {
+    val uri = Uri.parse("smsto:$number")
+    val i = Intent(Intent.ACTION_SENDTO, uri)
+    i.setPackage("com.whatsapp")
+    startActivity(Intent.createChooser(i, ""))
 }

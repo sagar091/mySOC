@@ -17,12 +17,24 @@
     <string name="view_more"><u>View more</u></string>
     <string name="view_all"><u>View all</u></string>
     <string name="menu_home">Home</string>
-    <string name="forgot_password_label">Forgot Password</string>
+    <string name="forgot_password_label"><u>Forgot Password</u></string>
     <string name="email_id_label">Email-id</string>
     <string name="reset_password_label">Reset password</string>
-    <string name="reset_password_desc">We will send you an email with a link to reset your password</string>
+    <string name="reset_password_desc">We will send you an email with a link to reset your password.</string>
+    <string name="conclusion"><u>Conclusion</u></string>
     <string-array name="property_types">
         <item>Owned</item>
         <item>Rental</item>
     </string-array>
+    <string-array name="years">
+        <item>2020</item>
+        <item>2021</item>
+        <item>2022</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="property_proof_tip">If you are the owner of the property, attach the electricity bill or property tax bill or any other document where the address of the property is written.
+        \n\nIf you are the tenant of the property, attach the rent agreement.</string>
+
 </resources>

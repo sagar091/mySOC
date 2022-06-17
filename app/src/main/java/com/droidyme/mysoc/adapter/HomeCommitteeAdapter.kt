@@ -1,25 +1,33 @@
 package com.droidyme.mysoc.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.droidyme.mysoc.R
+import com.droidyme.mysoc.databinding.ItemDashboardCommitteeBinding
 
-class HomeCommitteeAdapter : RecyclerView.Adapter<HomeCommitteeAdapter.CommitteeViewHolder>() {
+class HomeCommitteeAdapter(private var context: Context) :
+    RecyclerView.Adapter<HomeCommitteeAdapter.CommitteeViewHolder>() {
 
-    class CommitteeViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
+    inner class CommitteeViewHolder(var binding: ItemDashboardCommitteeBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind() {
+
+        }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommitteeViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_dashboard_committee, parent, false)
-        return CommitteeViewHolder(view)
+        val inflater = LayoutInflater.from(context)
+        val binding: ItemDashboardCommitteeBinding =
+            DataBindingUtil.inflate(inflater, R.layout.item_dashboard_committee, parent, false)
+        return CommitteeViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: CommitteeViewHolder, position: Int) {
-
+        holder.bind()
     }
 
     override fun getItemCount(): Int {

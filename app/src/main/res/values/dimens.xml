@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <dimen name="line_spacing">3sp</dimen>
-    <dimen name="button_corner">10dp</dimen>
-    <dimen name="card_corner">10dp</dimen>
+    <dimen name="line_spacing">4sp</dimen>
+    <dimen name="button_corner">8dp</dimen>
+    <dimen name="card_corner">8dp</dimen>
     <dimen name="content_corner">4dp</dimen>
-    <dimen name="edit_text_corner">8dp</dimen>
+    <dimen name="edit_text_corner">6dp</dimen>
     <dimen name="empty_text_size">26sp</dimen>
     <dimen name="labeled_default_width">72dp</dimen>
     <dimen name="labeled_default_height">32dp</dimen>
@@ -42,7 +42,7 @@
     <dimen name="sp62">62sp</dimen>
     <dimen name="sp64">64sp</dimen>
 
-    <dimen name="BUTTON_HEIGHT">60dp</dimen>
+    <dimen name="BUTTON_HEIGHT">48dp</dimen>
     <dimen name="SMALL_BUTTON_HEIGHT">@dimen/dimen_30dp</dimen>
 
     <dimen name="dimen_.5dp" tools:ignore="MissingDefaultResource">0.5dp</dimen>

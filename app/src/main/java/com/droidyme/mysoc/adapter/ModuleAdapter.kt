@@ -2,38 +2,46 @@ package com.droidyme.mysoc.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.droidyme.mysoc.R
+import com.droidyme.mysoc.databinding.ItemModuleBinding
 import com.droidyme.mysoc.model.Section
-import com.droidyme.mysoc.ui.CircularActivity
+import com.droidyme.mysoc.ui.*
 import com.droidyme.mysoc.utility.fireIntent
-import kotlinx.android.synthetic.main.item_module.view.*
 
-class ModuleAdapter(var context: Context, private var items: ArrayList<Section.Module>) :
+class ModuleAdapter(private var context: Context, private var items: ArrayList<Section.Module>) :
     RecyclerView.Adapter<ModuleAdapter.ModuleViewHolder>() {
 
-    class ModuleViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
+    inner class ModuleViewHolder(var binding: ItemModuleBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(module: Section.Module) {
-            view.txtModuleName.text = module.name
-            view.txtModuleName.isSelected = true
-            view.imgModuleIcon.setImageResource(module.icon)
-            view.setOnClickListener { redirect(module.id) }
+            binding.txtModuleName.isSelected = true
+            binding.executePendingBindings()
+            binding.root.setOnClickListener { redirect(module.id) }
         }
 
         private fun redirect(id: Int) {
             when (id) {
-                1 -> view.context.fireIntent(CircularActivity::class.java)
+                1 -> context.fireIntent(CircularListActivity::class.java)
+                2 -> context.fireIntent(MeetingListActivity::class.java)
+                3 -> context.fireIntent(EventListActivity::class.java)
+                4 -> context.fireIntent(FundActivity::class.java)
+                5 -> context.fireIntent(InHouseBusinessActivity::class.java)
+                6 -> context.fireIntent(HouseHoldServiceActivity::class.java)
+                7 -> context.fireIntent(RentSellListActivity::class.java)
             }
         }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ModuleViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_module, parent, false)
-        return ModuleViewHolder(view)
+        val inflater = LayoutInflater.from(context)
+        val binding: ItemModuleBinding =
+            DataBindingUtil.inflate(inflater, R.layout.item_module, parent, false)
+        return ModuleViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ModuleViewHolder, position: Int) {

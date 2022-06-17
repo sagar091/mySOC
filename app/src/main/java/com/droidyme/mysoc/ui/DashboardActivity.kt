@@ -1,58 +1,91 @@
 package com.droidyme.mysoc.ui
 
+import android.os.Build
 import android.os.Bundle
-import android.view.Menu
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
+import androidx.databinding.DataBindingUtil
 import com.droidyme.mysoc.R
-import com.droidyme.mysoc.fragment.HomeFragment
-import com.droidyme.mysoc.helper.loadCircular
+import com.droidyme.mysoc.adapter.SectionAdapter
+import com.droidyme.mysoc.databinding.ActivityDashboardBinding
+import com.droidyme.mysoc.model.Section
 import com.droidyme.mysoc.utility.fireIntent
-import kotlinx.android.synthetic.main.layout_dashboard_toolbar.*
-import kotlinx.android.synthetic.main.layout_toolbar.toolBar
+import com.droidyme.mysoc.utility.loadCircular
 
 class DashboardActivity : AppCompatActivity() {
 
     private var option = R.id.action_home
-    private var activeFragment: Fragment? = null
+    private lateinit var binding: ActivityDashboardBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_dashboard)
         init()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.dashboard_action_menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
     private fun init() {
-        toolBar.title = ""
-        setSupportActionBar(toolBar)
-        toolbar_title.text = "Sagar Tahelyani"
-        toolbar_sub_title.text = "Volunteer"
-        toolbar_app_icon.loadCircular(R.drawable.temp)
+        binding.toolBarLayout.toolBar.title = ""
+        setSupportActionBar(binding.toolBarLayout.toolBar)
+        binding.toolBarLayout.toolbarTitle.text = "Sagar Tahelyani"
+        binding.toolBarLayout.toolbarSubTitle.text = "Volunteer"
+        binding.toolBarLayout.toolbarAppIcon.loadCircular(R.drawable.temp)
+        binding.toolBarLayout.toolbarAppIcon.visibility = View.VISIBLE
+        binding.toolBarLayout.imgEmergency.visibility = View.VISIBLE
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            binding.toolBarLayout.imgEmergency.tooltipText = "Emergency call"
+        }
 
-        redirectOption()
+        setDashboard()
         actionClick()
     }
 
-    private fun actionClick() {
-        layoutProfile.setOnClickListener { fireIntent(ViewProfileActivity::class.java) }
+    private fun setDashboard() {
+        val sections = arrayListOf<Section>()
+        var modules = arrayListOf<Section.Module>()
+        var module = Section.Module(1, R.drawable.ic_announcement, "Circular")
+        modules.add(module)
+        module = Section.Module(2, R.drawable.ic_meeting, "Meetings")
+        modules.add(module)
+        module = Section.Module(3, R.drawable.ic_events, "Events")
+        modules.add(module)
+        module = Section.Module(4, R.drawable.ic_fund, "Funds")
+        modules.add(module)
+        sections.add(Section(1, "Updates", modules))
+
+        modules = arrayListOf()
+        module = Section.Module(5, R.drawable.ic_in_house_business, "In-house business")
+        modules.add(module)
+        module = Section.Module(6, R.drawable.ic_house_hold, "House-hold services")
+        modules.add(module)
+        module = Section.Module(7, R.drawable.ic_rent_sell, "Rent/Sell")
+        modules.add(module)
+        module = Section.Module(8, R.drawable.ic_other, "Other")
+        modules.add(module)
+        sections.add(Section(2, "Services", modules))
+
+        modules = arrayListOf()
+        module = Section.Module(9, R.drawable.ic_committee, "Committee members")
+        modules.add(module)
+        module = Section.Module(10, R.drawable.ic_society, "Society")
+        modules.add(module)
+        module = Section.Module(11, R.drawable.ic_club_house, "Club house")
+        modules.add(module)
+        sections.add(Section(3, "About", modules))
+
+        modules = arrayListOf()
+        module = Section.Module(12, R.drawable.ic_complaint, "Complaint")
+        modules.add(module)
+        module = Section.Module(13, R.drawable.ic_suggestion, "Suggestion")
+        modules.add(module)
+        module = Section.Module(14, R.drawable.ic_polls, "Polls")
+        modules.add(module)
+        sections.add(Section(4, "Improve your society", modules))
+
+        binding.sectionRecyclerView.adapter = SectionAdapter(this, sections)
     }
 
-    private fun redirectOption() {
-        val manager: FragmentManager = supportFragmentManager
-        val ft: FragmentTransaction = manager.beginTransaction()
-        when (option) {
-            R.id.action_home -> {
-                activeFragment = HomeFragment.newInstance()
-            }
-        }
-        activeFragment?.let { ft.replace(R.id.frame_container, it, option.toString()) }
-        ft.commit()
+    private fun actionClick() {
+        binding.toolBarLayout.layoutProfile.setOnClickListener { fireIntent(ViewProfileActivity::class.java) }
+        binding.toolBarLayout.imgEmergency.setOnClickListener { fireIntent(ViewProfileActivity::class.java) }
     }
 }

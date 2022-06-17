@@ -1,54 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/dimen_16dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="@dimen/dimen_120dp"
-        android:layout_height="@dimen/dimen_120dp"
-        app:cardBackgroundColor="@color/card_color_5"
-        app:cardCornerRadius="@dimen/card_corner"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <data>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="bottom"
-            android:orientation="vertical">
+    </data>
 
-            <ImageView
-                android:id="@+id/imgModuleIcon"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/dimen_8dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardBackgroundColor="@color/button_background"
+            app:cardCornerRadius="@dimen/card_corner"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:0.75"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:padding="@dimen/dimen_22dp"
-                android:src="@drawable/ic_announcement"
-                app:tint="@color/white" />
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/txtModuleName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/button_background"
-                android:ellipsize="marquee"
-                android:fadingEdge="horizontal"
-                android:fontFamily="@font/medium_500"
-                android:gravity="center"
-                android:marqueeRepeatLimit="marquee_forever"
-                android:padding="@dimen/dimen_10dp"
-                android:scrollHorizontally="true"
-                android:singleLine="true"
-                android:textColor="@color/white"
-                android:textSize="@dimen/sp16" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-        </LinearLayout>
+                    <ImageView
+                        android:id="@+id/imgModuleIcon"
+                        android:layout_width="@dimen/dimen_28dp"
+                        android:layout_height="@dimen/dimen_28dp"
+                        android:adjustViewBounds="true"
+                        app:tint="@color/white" />
 
-    </com.google.android.material.card.MaterialCardView>
+                    <TextView
+                        android:id="@+id/txtModuleName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_16dp"
+                        android:layout_marginTop="@dimen/dimen_4dp"
+                        android:layout_marginEnd="@dimen/dimen_16dp"
+                        android:ellipsize="marquee"
+                        android:fadingEdge="horizontal"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center"
+                        android:marqueeRepeatLimit="marquee_forever"
+                        android:scrollHorizontally="true"
+                        android:singleLine="true"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imgNew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="@dimen/dimen_8dp"
+                    android:layout_marginTop="@dimen/dimen_8dp"
+                    android:layout_marginEnd="@dimen/dimen_8dp"
+                    android:layout_marginBottom="@dimen/dimen_8dp"
+                    android:src="@drawable/ic_new" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

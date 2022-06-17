@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.CircularDetailsActivity">
+
+        <include
+            android:id="@+id/toolBarLayout"
+            layout="@layout/layout_toolbar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolBarLayout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dimen_24dp">
+
+                <TextView
+                    android:id="@+id/txtMeetingTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_4dp"
+                    android:background="@color/off_white"
+                    android:padding="@dimen/dimen_20dp"
+                    android:text="@string/dummy"
+                    android:textSize="@dimen/sp15"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtMeetingDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_4dp"
+                    android:background="@color/off_white"
+                    android:padding="@dimen/dimen_20dp"
+                    android:text="@string/dummy_long"
+                    android:textSize="@dimen/sp15"
+                    app:layout_constraintTop_toBottomOf="@id/txtMeetingTitle" />
+
+                <RelativeLayout
+                    android:id="@+id/pointRelative"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_4dp"
+                    android:background="@color/off_white"
+                    android:paddingStart="@dimen/dimen_20dp"
+                    android:paddingTop="@dimen/dimen_20dp"
+                    android:paddingEnd="@dimen/dimen_20dp"
+                    android:paddingBottom="@dimen/dimen_8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtMeetingDescription">
+
+                    <TextView
+                        android:id="@+id/txtPoints"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/medium"
+                        android:text="Points to be discussed:" />
+
+                    <TextView
+                        android:id="@+id/txtConclusion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="@font/medium"
+                        android:text="@string/conclusion" />
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/pointsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/off_white"
+                    android:overScrollMode="never"
+                    android:paddingStart="@dimen/dimen_20dp"
+                    android:paddingEnd="@dimen/dimen_20dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/pointRelative"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:listitem="@layout/item_meeting_point" />
+
+                <TextView
+                    android:id="@+id/txtCreatedOn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/dimen_6dp"
+                    android:layout_marginEnd="@dimen/dimen_20dp"
+                    android:fontFamily="@font/light"
+                    android:padding="@dimen/dimen_4dp"
+                    android:text="10-July-2021, 2.00 PM"
+                    android:textSize="@dimen/sp14"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pointsRecyclerView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

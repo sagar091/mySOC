@@ -1,6 +1,7 @@
 package com.droidyme.mysoc.utility
 
 import android.app.Activity
+import android.app.DatePickerDialog
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
@@ -10,7 +11,10 @@ import android.net.Uri
 import android.os.Build
 import android.os.Environment
 import android.provider.MediaStore
+import androidx.annotation.NonNull
 import androidx.core.text.HtmlCompat
+import com.gun0912.tedpermission.PermissionListener
+import com.gun0912.tedpermission.TedPermission
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -58,7 +62,7 @@ class Utility {
         }*/
 
         // run-time permission, example is in usage file
-        /*fun askPermissions(
+        fun askPermissions(
             context: Context,
             @NonNull permissions: Array<String>,
             permissionListener: PermissionListener?
@@ -73,7 +77,7 @@ class Utility {
                 .setDeniedMessage("If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]")
                 .setPermissions(*permissions)
                 .check()
-        }*/
+        }
 
         // changing date-time formatting
         fun formatDate(date: String?, inputFormat: String?, outputFormat: String?): String {
@@ -345,5 +349,27 @@ class Utility {
             return BitmapDescriptorFactory.fromBitmap(bitmap)
         }*/
 
+        fun selectDate(context: Context): String {
+            var selectedDate = ""
+            val c = Calendar.getInstance()
+            val year = c.get(Calendar.YEAR)
+            val month = c.get(Calendar.MONTH)
+            val day = c.get(Calendar.DAY_OF_MONTH)
+
+
+            val dpd = DatePickerDialog(
+                context,
+                { view, year, monthOfYear, dayOfMonth ->
+                    selectedDate = "" + dayOfMonth + " " + (monthOfYear + 1) + ", " + year
+                },
+                year,
+                month,
+                day
+            )
+            dpd.datePicker.maxDate = Calendar.getInstance().timeInMillis
+            dpd.show()
+
+            return selectedDate
+        }
     }
 }

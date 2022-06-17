@@ -1,58 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="@dimen/dimen_8dp"
-    android:layout_gravity="center">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/dimen_16dp"
-        android:paddingBottom="@dimen/dimen_16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:gravity="center_vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/dimen_4dp"
+        android:background="@color/off_white"
+        android:padding="@dimen/dimen_8dp">
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/dimen_8dp"
+            android:paddingBottom="@dimen/dimen_8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/txtTitle"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:fontFamily="@font/regular_400"
-                android:gravity="center_vertical"
-                android:textSize="@dimen/sp14"
-                android:maxLines="4"
-                android:text="@string/dummy" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center_vertical"
+                        android:maxLines="2"
+                        android:text="@string/dummy"
+                        android:textSize="@dimen/sp16" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_6dp"
+                        android:text=" - Committee"
+                        android:textSize="@dimen/sp15" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:fontFamily="@font/light"
+                        android:text="10-July-2021, 2.00 PM"
+                        android:textSize="@dimen/sp14" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="@dimen/dimen_16dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:fontFamily="@font/light_300"
-                android:layout_marginTop="@dimen/dimen_6dp"
-                android:text=" - By Committee on 10th July, 2021"
-                android:textSize="@dimen/sp14" />
+                android:layout_marginStart="@dimen/dimen_4dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_right"
+                android:visibility="gone" />
 
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="@dimen/dimen_18dp"
-            android:src="@drawable/ic_right"
-            android:adjustViewBounds="true"
-            android:layout_marginStart="@dimen/dimen_12dp"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

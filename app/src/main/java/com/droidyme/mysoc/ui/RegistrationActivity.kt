@@ -1,22 +1,22 @@
 package com.droidyme.mysoc.ui
 
+import android.app.Dialog
 import android.os.Bundle
-import android.text.method.PasswordTransformationMethod
 import android.view.View
-import android.widget.AdapterView
-import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.droidyme.mysoc.R
-import com.droidyme.mysoc.utility.closeScreen
-import com.droidyme.mysoc.utility.fireIntent
-import kotlinx.android.synthetic.main.activity_registration.*
+import com.droidyme.mysoc.databinding.ActivityRegistrationBinding
+import com.droidyme.mysoc.fragment.CustomDialogFragment
+import com.droidyme.mysoc.utility.*
 
-class RegistrationActivity : AppCompatActivity() {
+class RegistrationActivity : BaseActivity() {
 
     private var isShow = false
+    private lateinit var binding: ActivityRegistrationBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registration)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_registration)
         init()
     }
 
@@ -25,16 +25,14 @@ class RegistrationActivity : AppCompatActivity() {
     }
 
     private fun actionClick() {
-        edtType.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        /*binding.edtType.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 when {
-                    edtType.selectedItem.toString() == "Owned" -> {
-                        txtLabelAttachment.text =
-                            "Property proof (electricity-bill | property-index | aadhar-card)"
+                    binding.edtType.selectedItem.toString() == "Owned" -> {
+                        toast("Owned")
                     }
-                    edtType.selectedItem.toString() == "Rental" -> {
-                        txtLabelAttachment.text =
-                            "Property proof (Rent agreement, police verification)"
+                    binding.edtType.selectedItem.toString() == "Rental" -> {
+                        toast("Rental")
                     }
                 }
             }
@@ -42,29 +40,69 @@ class RegistrationActivity : AppCompatActivity() {
             override fun onNothingSelected(p0: AdapterView<*>?) {
 
             }
+        }*/
 
+        binding.edtDate.setOnClickListener { toast("click") }
+
+        binding.checkShifting.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                binding.dateInput.visibility = View.VISIBLE
+            } else {
+                binding.dateInput.visibility = View.GONE
+            }
         }
 
-        btnRegister.setOnClickListener { fireIntent(AccountStatusActivity::class.java) }
-        txtLoginHere.setOnClickListener {
+        binding.btnRegister.setOnClickListener {
+            ProgressUtils.showProgress(this, "Creating an account..")
+            countDownTimer(3000) {
+                ProgressUtils.hideProgress()
+                DialogHelper.showDialog(supportFragmentManager,
+                    "Property proof",
+                    "Your account has been created. You can login into an app once your account will be approved by Admin.",
+                    "OK",
+                    "",
+                    object : CustomDialogFragment.OnOptionClickListener {
+                        override fun onClick(isYes: Boolean, dialog: Dialog) {
+                            dialog.dismiss()
+                        }
+
+                    })
+            }
+        }
+        binding.txtLoginHere.setOnClickListener {
             fireIntent(LoginActivity::class.java)
             closeScreen()
         }
-        imgShowPassword.setOnClickListener {
-            showHidePassword()
+        /* binding.imgShowPassword.setOnClickListener {
+             showHidePassword()
+         }*/
+
+        binding.proofInput.setEndIconOnClickListener {
+            DialogHelper.showDialog(supportFragmentManager,
+                "Property proof",
+                getString(R.string.property_proof_tip),
+                "OK",
+                "",
+                object : CustomDialogFragment.OnOptionClickListener {
+                    override fun onClick(isYes: Boolean, dialog: Dialog) {
+                        dialog.dismiss()
+                    }
+                })
         }
+
+        binding.edtDate.setOnClickListener { binding.edtDate.setText(Utility.selectDate(this)) }
     }
 
-    private fun showHidePassword() {
+    /*private fun showHidePassword() {
         isShow = !isShow
         if (isShow) {
-            imgShowPassword.setImageResource(R.drawable.ic_show)
-            edtPassword.transformationMethod = null
+            binding.imgShowPassword.setImageResource(R.drawable.ic_show)
+            binding.edtPassword.transformationMethod = null
         } else {
-            imgShowPassword.setImageResource(R.drawable.ic_hide)
-            edtPassword.transformationMethod = PasswordTransformationMethod()
+            binding.imgShowPassword.setImageResource(R.drawable.ic_hide)
+            binding.edtPassword.transformationMethod = PasswordTransformationMethod()
         }
-    }
+    }*/
 
     override fun onBackPressed() {
         closeScreen()

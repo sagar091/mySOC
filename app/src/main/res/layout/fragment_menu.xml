@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:drawableEnd="@drawable/ic_right"
-            android:fontFamily="@font/medium_500"
+            android:fontFamily="@font/medium"
             android:padding="@dimen/dimen_20dp"
             android:text="My Profile"
             android:textSize="@dimen/sp18" />
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:drawableEnd="@drawable/ic_right"
-            android:fontFamily="@font/medium_500"
+            android:fontFamily="@font/medium"
             android:padding="@dimen/dimen_20dp"
             android:text="Committee Section"
             android:textSize="@dimen/sp18" />
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:drawableEnd="@drawable/ic_right"
-            android:fontFamily="@font/medium_500"
+            android:fontFamily="@font/medium"
             android:padding="@dimen/dimen_20dp"
             android:text="Complaints"
             android:textSize="@dimen/sp18" />
@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:drawableEnd="@drawable/ic_right"
-            android:fontFamily="@font/medium_500"
+            android:fontFamily="@font/medium"
             android:padding="@dimen/dimen_20dp"
             android:text="Suggestions"
             android:textSize="@dimen/sp18" />
@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:drawableEnd="@drawable/ic_right"
-            android:fontFamily="@font/medium_500"
+            android:fontFamily="@font/medium"
             android:padding="@dimen/dimen_20dp"
             android:text="Logout"
             android:textSize="@dimen/sp18" />

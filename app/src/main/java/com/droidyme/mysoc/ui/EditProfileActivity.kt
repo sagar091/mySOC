@@ -2,22 +2,24 @@ package com.droidyme.mysoc.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.droidyme.mysoc.R
+import com.droidyme.mysoc.databinding.ActivityEditProfileBinding
 import com.droidyme.mysoc.utility.closeScreen
-import kotlinx.android.synthetic.main.layout_toolbar.*
 
 class EditProfileActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityEditProfileBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_edit_profile)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_edit_profile)
         init()
     }
 
     private fun init() {
-        toolBar.title = "Edit profile"
-        setSupportActionBar(toolBar)
+        binding.toolBarLayout.toolBar.title = "Edit profile"
+        setSupportActionBar(binding.toolBarLayout.toolBar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        toolBar.setNavigationOnClickListener { closeScreen() }
+        binding.toolBarLayout.toolBar.setNavigationOnClickListener { closeScreen() }
     }
 
     override fun onBackPressed() {

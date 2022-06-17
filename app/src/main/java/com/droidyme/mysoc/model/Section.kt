@@ -1,5 +1,6 @@
 package com.droidyme.mysoc.model
 
+
 data class Section(
     val id: Int,
     val name: String,

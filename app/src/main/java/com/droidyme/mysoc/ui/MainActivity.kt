@@ -3,27 +3,28 @@ package com.droidyme.mysoc.ui
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.droidyme.mysoc.R
 import com.droidyme.mysoc.adapter.IntroSliderAdapter
+import com.droidyme.mysoc.databinding.ActivityMainBinding
 import com.droidyme.mysoc.model.Slider
 import com.droidyme.mysoc.utility.closeScreen
 import com.droidyme.mysoc.utility.fireIntent
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        window.setFlags(WindowManager.LayoutParams.FLAG_SECURE,
-            WindowManager.LayoutParams.FLAG_SECURE)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         init()
     }
 
     private fun init() {
-        btnRegister.setOnClickListener { fireIntent(RegistrationActivity::class.java) }
-        btnLogin.setOnClickListener { fireIntent(LoginActivity::class.java) }
+        binding.txtRegister.setOnClickListener { fireIntent(RegistrationActivity::class.java) }
+        binding.txtLogin.setOnClickListener { fireIntent(LoginActivity::class.java) }
         initPager()
     }
 
@@ -57,8 +58,8 @@ class MainActivity : AppCompatActivity() {
                 getString(R.string.dummy)
             )
         )
-        viewPager.adapter = IntroSliderAdapter(this, sliderModels)
-        TabLayoutMediator(tabLayout, viewPager, true, true) { tab, position ->
+        binding.viewPager.adapter = IntroSliderAdapter(this, sliderModels)
+        TabLayoutMediator(binding.tabLayout, binding.viewPager, true, true) { tab, position ->
         }.attach()
     }
 

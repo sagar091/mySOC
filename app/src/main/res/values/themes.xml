@@ -1,25 +1,33 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <!-- Base application theme. -->
-    <style name="Theme.MySOC" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.MySOC" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/color_primary</item>
-        <item name="colorPrimaryVariant">@color/color_primary_dark</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="android:statusBarColor">@color/color_primary_dark</item>
         <item name="android:lineSpacingExtra">@dimen/line_spacing</item>
         <item name="android:includeFontPadding">false</item>
+        <item name="colorAccent">@color/color_accent</item>
         <item name="android:windowBackground">@color/window_background</item>
         <item name="android:textColor">@color/text_color</item>
-        <item name="android:fontFamily">@font/regular_400</item>
+        <item name="android:fontFamily">@font/regular</item>
         <item name="editTextStyle">@style/EditTextDefault</item>
         <item name="android:textViewStyle">@style/TextViewDefault</item>
+        <item name="textInputStyle">@style/MyTextInputLayout</item>
+    </style>
+
+    <style name="FullScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
     </style>
 
     <style name="EditTextDefault" parent="Widget.AppCompat.EditText">
         <item name="android:background">@drawable/edittext_bg</item>
-        <item name="android:textColor">@color/edit_text_color</item>
-        <item name="android:fontFamily">@font/light_300</item>
+        <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:fontFamily">@font/regular</item>
         <item name="android:textSize">@dimen/sp16</item>
         <item name="android:maxLines">1</item>
         <item name="android:padding">@dimen/dimen_16dp</item>
@@ -28,7 +36,7 @@
 
     <style name="SpinnerDefault" parent="Widget.AppCompat.TextView.SpinnerItem">
         <item name="android:textColor">@color/primary_text_color</item>
-        <item name="android:fontFamily">@font/regular_400</item>
+        <item name="android:fontFamily">@font/regular</item>
         <item name="android:textSize">@dimen/sp15</item>
         <item name="android:background">@drawable/edittext_bg</item>
         <item name="android:padding">@dimen/dimen_16dp</item>
@@ -36,8 +44,9 @@
 
     <style name="TextViewDefault" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/primary_text_color</item>
-        <item name="android:fontFamily">@font/regular_400</item>
-        <item name="android:textSize">@dimen/sp15</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:textSize">@dimen/sp16</item>
+        <item name="android:lineSpacingExtra">@dimen/line_spacing</item>
     </style>
 
     <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
@@ -45,18 +54,50 @@
         <item name="colorControlNormal">@color/white</item>
         <item name="titleEnabled">false</item>
         <item name="titleTextColor">@color/white</item>
-        <item name="fontFamily">@font/bold_700</item>
+        <item name="fontFamily">@font/semi_bold</item>
+        <item name="android:background">@drawable/main_background</item>
+    </style>
+
+    <style name="DashboardToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <!-- Customize color of navigation drawer icon and back arrow -->
+        <item name="colorControlNormal">@color/white</item>
+        <item name="titleEnabled">false</item>
+        <item name="titleTextColor">@color/white</item>
     </style>
 
     <style name="ButtonStyle" parent="Widget.AppCompat.Button">
-        <item name="android:textSize">@dimen/sp20</item>
+        <item name="android:textSize">@dimen/sp18</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:fontFamily">@font/semi_bold_600</item>
+        <item name="android:fontFamily">@font/semi_bold</item>
         <item name="android:layout_height">@dimen/BUTTON_HEIGHT</item>
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingStart">@dimen/dimen_18dp</item>
+        <item name="android:paddingEnd">@dimen/dimen_18dp</item>
         <item name="android:background">@drawable/drawable_button</item>
         <item name="android:enabled">true</item>
         <item name="textAllCaps">false</item>
+        <item name="android:layout_marginTop">@dimen/dimen_24dp</item>
+    </style>
+
+    <style name="TabText" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/semi_bold</item>
+    </style>
+
+    <style name="ProgressHUD" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="MyTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">@color/secondary_text_color</item>
+        <item name="boxStrokeColor">@color/color_accent</item>
+        <item name="boxBackgroundMode">outline</item>
+        <item name="hintTextColor">@color/color_accent</item>
     </style>
 
 </resources>

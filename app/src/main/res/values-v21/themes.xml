@@ -1,0 +1,22 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="Theme.MySOC" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorPrimaryVariant">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor">@color/color_primary_dark</item>
+        <item name="android:lineSpacingExtra">@dimen/line_spacing</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="editTextStyle">@style/EditTextDefault</item>
+        <item name="android:textViewStyle">@style/TextViewDefault</item>
+        <item name="textInputStyle">@style/MyTextInputLayout</item>
+    </style>
+
+</resources>

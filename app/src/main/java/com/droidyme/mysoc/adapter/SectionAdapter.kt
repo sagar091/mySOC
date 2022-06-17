@@ -2,28 +2,30 @@ package com.droidyme.mysoc.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.droidyme.mysoc.BR
 import com.droidyme.mysoc.R
+import com.droidyme.mysoc.databinding.ItemSectionBinding
 import com.droidyme.mysoc.model.Section
-import kotlinx.android.synthetic.main.item_section.view.*
 
-class SectionAdapter(var context: Context, private var items: ArrayList<Section>) :
+class SectionAdapter(private var context: Context, private var items: ArrayList<Section>) :
     RecyclerView.Adapter<SectionAdapter.SectionViewHolder>() {
 
-    class SectionViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
+    inner class SectionViewHolder(var binding: ItemSectionBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         fun bind(section: Section) {
-            view.txtSectionTitle.text = section.name
-            view.moduleRecyclerView.adapter = ModuleAdapter(view.context, section.modules)
+            binding.executePendingBindings()
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SectionViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_section, parent, false)
-        return SectionViewHolder(view)
+        val inflater = LayoutInflater.from(context)
+        val binding: ItemSectionBinding =
+            DataBindingUtil.inflate(inflater, R.layout.item_section, parent, false)
+        return SectionViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: SectionViewHolder, position: Int) {
