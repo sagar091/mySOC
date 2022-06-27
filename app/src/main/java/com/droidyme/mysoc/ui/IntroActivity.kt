@@ -1,24 +1,23 @@
 package com.droidyme.mysoc.ui
 
 import android.os.Bundle
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.droidyme.mysoc.R
 import com.droidyme.mysoc.adapter.IntroSliderAdapter
-import com.droidyme.mysoc.databinding.ActivityMainBinding
+import com.droidyme.mysoc.databinding.ActivityIntroBinding
 import com.droidyme.mysoc.model.Slider
 import com.droidyme.mysoc.utility.closeScreen
 import com.droidyme.mysoc.utility.fireIntent
 import com.google.android.material.tabs.TabLayoutMediator
 
-class MainActivity : AppCompatActivity() {
+class IntroActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityIntroBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_intro)
         init()
     }
 

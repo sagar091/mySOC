@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/main_background"
         android:padding="@dimen/dimen_20dp"
-        tools:context=".ui.MainActivity">
+        tools:context=".ui.IntroActivity">
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager"

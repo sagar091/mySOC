@@ -22,6 +22,6 @@ class SplashActivity : AppCompatActivity() {
          window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
          window.statusBarColor = ContextCompat.getColor(this, R.color.primary_text_color)*/
 
-        countDownTimer(2) { fireIntent(MainActivity::class.java, true) }
+        countDownTimer(2000) { fireIntent(IntroActivity::class.java, true) }
     }
 }

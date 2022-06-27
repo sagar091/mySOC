@@ -43,7 +43,7 @@ class AccountStatusActivity : AppCompatActivity() {
             binding.txtStatus.setTextAnimation("Account created", 300)
             binding.imgCheck.visibility = View.VISIBLE
 
-            countDownTimer(2000) { fireIntent(MainActivity::class.java, true) }
+            countDownTimer(2000) { fireIntent(IntroActivity::class.java, true) }
         }
     }
 

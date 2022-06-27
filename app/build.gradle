@@ -34,6 +34,7 @@ android {
     dataBinding {
         enabled true
     }
+    namespace 'com.droidyme.mysoc'
 }
 
 dependencies {

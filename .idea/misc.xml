@@ -70,6 +70,9 @@
         <entry key="..\:/Android/MyProjects/MySOC/app/src/main/res/layout/layout_toolbar.xml" value="0.32037037037037036" />
         <entry key="..\:/Android/MyProjects/MySOC/app/src/main/res/layout/popup_property_tip.xml" value="0.32592592592592595" />
         <entry key="..\:/Android/MyProjects/MySOC/app/src/main/res/layout/progress_hud.xml" value="0.32592592592592595" />
+        <entry key="..\:/Current/ResCon/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Current/ResCon/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Current/ResCon/app/src/main/res/layout/activity_registration.xml" value="0.25" />
       </map>
     </option>
   </component>

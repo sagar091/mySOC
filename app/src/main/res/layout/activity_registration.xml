@@ -106,45 +106,12 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <androidx.appcompat.widget.AppCompatCheckBox
-                    android:id="@+id/checkShifting"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_16dp"
-                    android:fontFamily="@font/medium"
-                    android:text="Shifted to society?"
-                    android:textSize="@dimen/sp16"
-                    app:layout_constraintTop_toBottomOf="@id/mobileInput" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/dateInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:layout_marginTop="@dimen/dimen_16dp"
-                    app:layout_constraintTop_toBottomOf="@id/checkShifting">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edtDate"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:clickable="true"
-                        android:focusable="false"
-                        android:focusableInTouchMode="false"
-                        android:hint="Date of shifting"
-                        android:inputType="date"
-                        android:longClickable="false"
-                        android:maxLength="10"
-                        android:maxLines="1" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/pwdInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_16dp"
-                    app:layout_constraintTop_toBottomOf="@id/dateInput">
+                    app:layout_constraintTop_toBottomOf="@id/mobileInput">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edtPassword"
@@ -202,13 +169,46 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkShifting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16dp"
+                    android:fontFamily="@font/medium"
+                    android:text="Shifted to society?"
+                    android:textSize="@dimen/sp16"
+                    app:layout_constraintTop_toBottomOf="@id/proofInput" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/dateInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/dimen_16dp"
+                    app:layout_constraintTop_toBottomOf="@id/checkShifting">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:hint="Date of shifting"
+                        android:inputType="date"
+                        android:longClickable="false"
+                        android:maxLength="10"
+                        android:maxLines="1" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
                 <ImageButton
                     android:id="@+id/btnRegister"
                     style="@style/ButtonStyle"
                     android:layout_gravity="end|center_vertical"
                     android:src="@drawable/ic_submit_arrow"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/proofInput"
+                    app:layout_constraintTop_toBottomOf="@id/dateInput"
                     app:tint="@color/white" />
 
                 <TextView

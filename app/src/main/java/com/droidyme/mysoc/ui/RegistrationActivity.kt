@@ -57,15 +57,14 @@ class RegistrationActivity : BaseActivity() {
             countDownTimer(3000) {
                 ProgressUtils.hideProgress()
                 DialogHelper.showDialog(supportFragmentManager,
-                    "Property proof",
+                    "Account created",
                     "Your account has been created. You can login into an app once your account will be approved by Admin.",
                     "OK",
                     "",
                     object : CustomDialogFragment.OnOptionClickListener {
                         override fun onClick(isYes: Boolean, dialog: Dialog) {
-                            dialog.dismiss()
+                            fireIntent(IntroActivity::class.java, true)
                         }
-
                     })
             }
         }
